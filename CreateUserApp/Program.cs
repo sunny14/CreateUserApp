@@ -12,7 +12,11 @@
         String username;
 
         String Name = NameParts[0];
-        String Lastname = NameParts[NameParts.Length - 1];
+        String Lastname = "";
+        if (NameParts.Length > 1)
+        {
+            Lastname = NameParts[NameParts.Length - 1];
+        }
 
         if (Lastname.Length >= 3)
         {

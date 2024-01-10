@@ -16,29 +16,28 @@
      */
     private static void Main(string[] args)
     {
-        Console.WriteLine("Enter your full name in small letters:");
-        String fullname = Console.ReadLine();
+        //get full name
+        Console.WriteLine("Enter full name:");
+        String Fullname = Console.ReadLine();
 
-        String[] NameParts = fullname.Split(' ');
+        String[] NameParts = Fullname.Split(' ');
 
+        //create username
         String Name = NameParts[0];
-        String Lastname = "";
-        if (NameParts.Length > 1)
+        String Lastname = NameParts[NameParts.Length-1];
+
+        String addition;
+        if (Lastname.Length >=3 )
         {
-            Lastname = NameParts[NameParts.Length - 1];
+            addition = Lastname.Substring(0, 3);
+        } else
+        {
+            addition = Lastname;
         }
 
+        String Username = Name + addition;
 
-        String username;
-        if (Lastname.Length >= 3)
-        {
-            username = Name + Lastname.Substring(0, 3);
-        }
-        else
-        {
-            username = Name + Lastname;
-        }
 
-        Console.WriteLine("Your username is: " + username);
+        Console.WriteLine("Your username is: "+Username);
     }
 }
